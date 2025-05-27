@@ -1,14 +1,11 @@
-package com.data;
+package com.constructor.di;
 
 public class Address {
     private String street;
     private String city;
 
-    public void setStreet(String street) {
+    public Address(String street, String city) {
         this.street = street;
-    }
-
-    public void setCity(String city) {
         this.city = city;
     }
 

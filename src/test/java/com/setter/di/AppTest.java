@@ -1,4 +1,4 @@
-package com.data;
+package com.setter.di;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

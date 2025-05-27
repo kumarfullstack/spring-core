@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Setter-Based Dependency Injection -->
+    <bean id="address" class="com.setter.di.Address" p:city="hyd">
+        <property name="street">
+            <value>hightec</value>
+        </property>
+    </bean>
+
+    <bean id="employee" class="com.setter.di.Employee">
+        <property name="id">
+            <value>123</value>
+        </property>
+        <property name="name" value="Ram"/>
+        <property name="addr" ref="address"/>
+        <property name="mobileNumbers">
+            <list>
+                <value>123456</value>
+                <value>822662</value>
+                <value>9762588</value>
+            </list>
+        </property>
+        <property name="emails">
+            <set>
+                <value>abc@gmail.com</value>
+                <value>zyx@gmail.com</value>
+            </set>
+        </property>
+        <property name="vehicleNumbers">
+            <map>
+                <entry key="Bike" value="TL 02 AB3837"/>
+                <entry key="Car" value="BH 02 AB3837"/>
+            </map>
+        </property>
+    </bean>
+
+</beans>
