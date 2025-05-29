@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- Basic xml based bean life cycle method implementation   -->
+    <bean class="com.lifecycle.method.Employee" id="employee"
+          init-method="init" destroy-method="destroy">
+        <constructor-arg name="name" value="Ram"/>
+        <constructor-arg name="id" value="R100"/>
+    </bean>
+
+    <!-- Basic interface based bean life cycle method implementation   -->
+    <bean class="com.lifecycle.method.EmployeeInterface" id="employee2">
+        <constructor-arg name="name" value="Ram"/>
+        <constructor-arg name="id" value="R100"/>
+    </bean>
+
+    <!-- it enable the annotations-->
+    <!--<context:annotation-config/>-->
+            <!-- OR -->
+    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
+
+    <bean class="com.lifecycle.method.EmployeeAnnotation" id="employee3">
+        <constructor-arg name="name" value="Ram"/>
+        <constructor-arg name="id" value="R100"/>
+    </bean>
+
+</beans>

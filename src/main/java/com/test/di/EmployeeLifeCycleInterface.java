@@ -1,14 +1,17 @@
 package com.test.di;
 
-public class Employee {
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+
+public class EmployeeLifeCycleInterface implements InitializingBean, DisposableBean {
 
     private String name;
     private String id;
 
-    public void init() {
+/*    public void init() {
         System.out.println("Life cycle init() method invoked");
-    }
-    public Employee(String name, String id) {
+    }*/
+    public EmployeeLifeCycleInterface(String name, String id) {
         this.name = name;
         this.id = id;
     }
@@ -23,5 +26,10 @@ public class Employee {
                 "name='" + name + '\'' +
                 ", id='" + id + '\'' +
                 '}';
+    }
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        System.out.println("Life cycle afterPropertiesSet() method invoked");
     }
 }

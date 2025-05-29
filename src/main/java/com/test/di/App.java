@@ -12,7 +12,7 @@ public class App
     public static void main( String[] args )
     {
         System.out.println( "Hello World!" );
-        ApplicationContext context = new ClassPathXmlApplicationContext("test-constructor-di.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("test.xml");
         Employee employee = (Employee)context.getBean("employee");
         Address address2 = (Address)context.getBean("address2");
         Addition addition = (Addition)context.getBean("addition");
