@@ -13,11 +13,11 @@
     </bean>
 
     <bean id="employee" class="com.setter.di.Employee">
+        <property name="addr" ref="address"/>
         <property name="id">
             <value>123</value>
         </property>
         <property name="name" value="Ram"/>
-        <property name="addr" ref="address"/>
         <property name="mobileNumbers">
             <list>
                 <value>123456</value>
